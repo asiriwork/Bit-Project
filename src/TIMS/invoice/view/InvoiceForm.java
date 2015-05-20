@@ -5,11 +5,15 @@
  */
 package TIMS.invoice.view;
 
+import TIMS.app.lib.TIMSMessages;
 import TIMS.app.lib.hbm.TimsInvoice;
+import TIMS.customer.controller.SaveCustomerController;
 import TIMS.customer.dto.CustomerComboItem;
+import TIMS.customer.dto.CustomerDto;
 import TIMS.customer.model.CustomerModel;
 import TIMS.invoice.controller.AddInvoiceItemsController;
 import TIMS.invoice.dto.InvoiceComboItem;
+import TIMS.invoice.dto.InvoiceDto;
 import TIMS.invoice.dto.InvoiceTypeComboItem;
 import TIMS.invoice.dto.SalesTypeComboItem;
 import TIMS.invoice.model.InvoiceModel;
@@ -18,6 +22,7 @@ import TIMS.supplier.model.SupplierModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -119,6 +124,11 @@ public class InvoiceForm extends javax.swing.JPanel implements ActionListener {
         jLabel2.setText("Date");
 
         Invoice_Date.setPreferredSize(new java.awt.Dimension(60, 28));
+        Invoice_Date.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Invoice_DateActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Type");
@@ -127,6 +137,11 @@ public class InvoiceForm extends javax.swing.JPanel implements ActionListener {
         jLabel4.setText("Vehicle No");
 
         Vehicle_No.setPreferredSize(new java.awt.Dimension(60, 28));
+        Vehicle_No.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Vehicle_NoActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Reference Invoice");
@@ -147,9 +162,20 @@ public class InvoiceForm extends javax.swing.JPanel implements ActionListener {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        Supplier_Code.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Supplier_CodeActionPerformed(evt);
+            }
+        });
+
         Save.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Save.setText("Save");
         Save.setPreferredSize(new java.awt.Dimension(42, 30));
+        Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveActionPerformed(evt);
+            }
+        });
 
         Reset.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Reset.setText("Reset");
@@ -316,6 +342,23 @@ public class InvoiceForm extends javax.swing.JPanel implements ActionListener {
         TimsInvoice invoice = saveInvoice();
         new AddInvoiceItemsController(invoice);
     }//GEN-LAST:event_addItemsBtnActionPerformed
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+       
+    }//GEN-LAST:event_SaveActionPerformed
+
+    private void Supplier_CodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Supplier_CodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Supplier_CodeActionPerformed
+
+    private void Invoice_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Invoice_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Invoice_DateActionPerformed
+
+    private void Vehicle_NoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vehicle_NoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Vehicle_NoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Invoice_Date;
     private javax.swing.JComboBox Ref_Invoice;

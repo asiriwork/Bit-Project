@@ -6,7 +6,7 @@ package TIMS.customer.dto;
 
 /**
  *
- * @author Damith
+ * @author Sithara Gunawardana
  */
 public class CustomerDto {
 

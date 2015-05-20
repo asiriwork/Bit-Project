@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Damith
+ * @author Sithara Gunawardana
  */
 public class CustomerModel {
 

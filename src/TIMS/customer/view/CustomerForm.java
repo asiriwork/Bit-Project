@@ -6,8 +6,10 @@
 
 package TIMS.customer.view;
 
+import TIMS.app.lib.TIMSMessages;
 import TIMS.customer.controller.SaveCustomerController;
 import TIMS.customer.dto.CustomerDto;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -162,17 +164,17 @@ public class CustomerForm extends javax.swing.JPanel {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(640, 512));
 
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 3, 18));
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel12.setText("New Customer");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(65, 65, 65)
                 .addComponent(jLabel12)
-                .addGap(55, 55, 55))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,70 +184,65 @@ public class CustomerForm extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel4.setText("Other Names    ");
         jLabel4.setToolTipText("");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel2.setText("Customer Name ");
         jLabel2.setToolTipText("");
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel5.setText("Post Box");
         jLabel5.setToolTipText("");
 
-        otherName.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        otherName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        name.setFont(new java.awt.Font("Times New Roman", 0, 12));
-        name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameActionPerformed(evt);
-            }
-        });
+        name.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        poBox.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        poBox.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        street.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        street.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel6.setText("Street");
         jLabel6.setToolTipText("");
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel7.setText("City   ");
         jLabel7.setToolTipText("");
 
-        city.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        city.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        telephone.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        telephone.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel9.setText("Phone Number");
         jLabel9.setToolTipText("");
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel8.setText("Mobile Number");
         jLabel8.setToolTipText("");
 
-        mobile.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        mobile.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel10.setText("Email         ");
         jLabel10.setToolTipText("");
 
-        email.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        email.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel11.setText("Fax      ");
         jLabel11.setToolTipText("");
 
-        fax.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        fax.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel14.setText("Other    ");
         jLabel14.setToolTipText("");
 
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 12));
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel13.setText("Type       ");
         jLabel13.setToolTipText("");
 
@@ -253,6 +250,7 @@ public class CustomerForm extends javax.swing.JPanel {
         other.setRows(3);
         jScrollPane1.setViewportView(other);
 
+        customerSaveButton.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         customerSaveButton.setText("Save");
         customerSaveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,13 +258,16 @@ public class CustomerForm extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         jButton2.setText("Reset");
+        jButton2.setPreferredSize(new java.awt.Dimension(51, 27));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
+        type.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
         type.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "WHOLESALE", "RETAIL" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -275,7 +276,7 @@ public class CustomerForm extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2)
                     .addComponent(jLabel5)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -286,35 +287,34 @@ public class CustomerForm extends javax.swing.JPanel {
                             .addComponent(jLabel11)
                             .addComponent(jLabel13)
                             .addComponent(jLabel14))
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addComponent(customerSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(telephone, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                            .addComponent(mobile)
-                            .addComponent(email)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                            .addComponent(fax, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                            .addComponent(type, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel4))
-                            .addGap(37, 37, 37)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(poBox, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                                    .addComponent(otherName, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                                    .addComponent(name))
-                                .addComponent(street, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addGap(82, 82, 82)
-                            .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(customerSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(11, 11, 11))
+                            .addComponent(telephone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mobile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(email, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fax, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(type, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4))
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(poBox, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                                .addComponent(otherName, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                                .addComponent(name))
+                            .addComponent(street, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -343,11 +343,11 @@ public class CustomerForm extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(telephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(mobile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(17, 17, 17)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
@@ -356,20 +356,18 @@ public class CustomerForm extends javax.swing.JPanel {
                     .addComponent(jLabel11)
                     .addComponent(fax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
-                    .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(type, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(customerSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel14)))
+                    .addComponent(jLabel14))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -402,17 +400,28 @@ public class CustomerForm extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, Short.MAX_VALUE)
                 .addGap(321, 321, 321))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 573, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        name.setText(null);
+        otherName.setText(null);
+        poBox.setText(null);
+        street.setText(null);
+        city.setText(null);
+        telephone.setText(null);
+        mobile.setText(null);
+        fax.setText(null);
+        email.setText(null);
+        other.setText(null);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
 private void customerSaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerSaveButtonActionPerformed
@@ -432,16 +441,18 @@ private void customerSaveButtonActionPerformed(java.awt.event.ActionEvent evt) {
         customerDto.setType(type.getSelectedItem().toString());
         customerDto.setOther(other.getText());
         
-        SaveCustomerController controller = new SaveCustomerController();        
+        SaveCustomerController controller = new SaveCustomerController(); 
+         if(name.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, TIMSMessages.CUSTOMERS_NAME);
+            
+        }else{
         controller.saveCustomer(customerDto);
+        JOptionPane.showMessageDialog(null, TIMSMessages.CUSTOMERS_SAVE_SUCCESS);
+         }
+        
     }catch(Exception e){        
     } 
 }//GEN-LAST:event_customerSaveButtonActionPerformed
-
-    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField city;

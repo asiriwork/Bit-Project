@@ -6,8 +6,17 @@
 
 package TIMS.supplier.view;
 
+import TIMS.app.lib.TIMSMessages;
+import TIMS.brand.controller.DeleteBransController;
+import TIMS.brand.controller.ViewBrandController;
 import TIMS.supplier.controller.AddSupplierController;
+import TIMS.supplier.controller.DeleteSuppliersController;
+import TIMS.supplier.controller.ViewSupplierController;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -176,7 +185,31 @@ private void Add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
 }//GEN-LAST:event_Add_btnActionPerformed
 
 private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
+    
+   
+    JFrame frame = new JFrame();
+    int result = JOptionPane.showConfirmDialog(frame, TIMSMessages.DELETE_CONFIRMATION, TIMSMessages.DELETE_CONFIRMATION_TITLE, JOptionPane.YES_NO_OPTION);
+    if (result == JOptionPane.YES_OPTION) {
+        TableModel model = supplierListTB.getModel();
+        ArrayList<Integer> supplierIds = new ArrayList<Integer>();
+        for (int i = 0; i < model.getRowCount(); i++) {
+            Boolean selected = (Boolean) model.getValueAt(i, 0);
+            if (selected) {
+                supplierIds.add((Integer) model.getValueAt(i, 1));
 
+            }
+        }
+        DeleteSuppliersController dbc = new DeleteSuppliersController();
+        dbc.setSupplierIds(supplierIds);
+        int count = dbc.deleteSuppliers();
+        if (count > 0) {
+            JOptionPane.showMessageDialog(null, count + TIMSMessages.SUPPLIERS_DELETE_SUCCESS);
+        } else {
+            JOptionPane.showMessageDialog(null, TIMSMessages.SUPPLIERS_DELETE_FAIL);
+        }
+        ViewSupplierController supplierController = new ViewSupplierController();
+        supplierController.execute();
+    }
     
     
     

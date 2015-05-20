@@ -8,7 +8,7 @@ import TIMS.app.lib.hbm.TimsCustomer;
 
 /**
  *
- * @author Nuwan Chathuranga <icechathuranga@gmail.com>
+ * @author Sithara Gunawardana
  */
 public class CustomerComboItem {
 

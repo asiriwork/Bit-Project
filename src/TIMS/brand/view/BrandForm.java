@@ -5,8 +5,10 @@
  */
 package TIMS.brand.view;
 
+import TIMS.app.lib.TIMSMessages;
 import TIMS.brand.controller.SaveBrandController;
 import TIMS.brand.dto.BrandDto;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -81,7 +83,7 @@ public class BrandForm extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(640, 512));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("New Brand");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -91,7 +93,7 @@ public class BrandForm extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(228, 228, 228)
                 .addComponent(jLabel1)
-                .addContainerGap(348, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,26 +103,26 @@ public class BrandForm extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Brand Name");
 
         Brand_Name.setPreferredSize(new java.awt.Dimension(60, 20));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Description");
 
         Brand_Des.setColumns(20);
         Brand_Des.setRows(5);
         jScrollPane1.setViewportView(Brand_Des);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Other");
 
         Br_Other.setColumns(20);
         Br_Other.setRows(5);
         jScrollPane2.setViewportView(Br_Other);
 
-        Save.setFont(new java.awt.Font("Tahoma", 0, 12));
+        Save.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Save.setText("Save");
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,19 +130,24 @@ public class BrandForm extends javax.swing.JPanel {
             }
         });
 
-        Reset.setFont(new java.awt.Font("Tahoma", 0, 12));
+        Reset.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Reset.setText("Reset");
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(339, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Save)
-                .addGap(92, 92, 92)
+                .addGap(45, 45, 45)
                 .addComponent(Reset)
-                .addGap(31, 31, 31))
+                .addGap(85, 85, 85))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +181,7 @@ public class BrandForm extends javax.swing.JPanel {
                                 .addComponent(Brand_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(241, Short.MAX_VALUE))
+                        .addContainerGap(112, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(21, 21, 21))))
@@ -196,9 +203,9 @@ public class BrandForm extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(234, Short.MAX_VALUE)
+                .addContainerGap(243, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(179, 179, 179))
         );
@@ -208,12 +215,12 @@ public class BrandForm extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 64, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,7 +239,7 @@ public class BrandForm extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(212, 212, 212))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,11 +258,24 @@ private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:ev
         brandDto.setOther(Br_Other.getText());
 
         SaveBrandController controller = new SaveBrandController();
+        if(Brand_Name.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, TIMSMessages.BRAND_NAME);
+            
+        }else{
         controller.saveBeand(brandDto);
+        JOptionPane.showMessageDialog(null, TIMSMessages.RECORD_ADDED);
+        }
     } catch (Exception e) {
         System.out.print("error from BrandForm---->" + e);
     }
 }//GEN-LAST:event_SaveActionPerformed
+
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+       this.Br_Other.setText(null);
+       this.Brand_Name.setText(null);
+       this.Brand_Des.setText(null);// TODO add your handling code here:
+    }//GEN-LAST:event_ResetActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Br_Other;
     private javax.swing.JTextArea Brand_Des;

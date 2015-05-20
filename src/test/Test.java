@@ -36,8 +36,8 @@ public class Test {
          employee.setTelephone("0342247255");
          
          TimsUser user = new TimsUser();
-         user.setUserName("Nuwan");
-         user.setPassword("ksajklsjkalsjkl");
+         //user.setUserName(");
+         //user.setPassword("");
          Session session = factory.openSession();
          Transaction transaction = null;
          try {

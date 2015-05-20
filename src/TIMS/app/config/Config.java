@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Nuwan Chathuranga <icechathuranga@gmail.com>
+ * @author Sithara Gunwaradana
  */
 public class Config {
     protected JFrame mainTemplate;

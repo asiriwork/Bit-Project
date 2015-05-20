@@ -6,6 +6,8 @@
 
 package TIMS.purches.view;
 
+import javax.swing.JTable;
+
 /**
  *
  * @author hp
@@ -171,4 +173,4 @@ public class PurchaseDetails extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-}
+    }

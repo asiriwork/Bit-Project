@@ -14,16 +14,23 @@ import TIMS.brand.controller.action.ViewBrandAction;
 import TIMS.customer.controller.action.AddCustomerAction;
 import TIMS.invoice.controller.action.AddInvoiceAction;
 import TIMS.invoice.controller.action.ViewInvoiceAction;
+import TIMS.sales.controller.action.AddSalesAction;
+import TIMS.sales.controller.action.ViewSalesAction;
+import TIMS.purches.controller.action.ViewPurchesAction;
 import TIMS.product.controller.action.AddProductAction;
 import TIMS.product.controller.action.AddProductToBrandAction;
 import TIMS.product.controller.action.ViewProductAction;
 import TIMS.supplier.controller.action.AddSupplierAction;
 import TIMS.supplier.controller.action.ViewSupplierAction;
+import TIMS.salesreturn.controller.action.AddSalesReturnAction;
+import TIMS.salesreturn.controller.action.ViewSalesReturnAction;
+import TIMS.stockreturn.controller.action.ViewStockReturnAction;
+
 import java.util.HashMap;
 
 /**
  *
- * @author Nuwan Chathuranga <icechathuranga@gmail.com>
+ * @author Sithara Gunawardana
  */
 public class Routes {
     private static Routes routes;

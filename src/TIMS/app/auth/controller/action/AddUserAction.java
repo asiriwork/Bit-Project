@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 
 /**
  *
- * @author Nuwan Chathuranga <icechathuranga@gmail.com>
+ * @author Sithara Gunawardana
  */
 public class AddUserAction extends BaseAction{
 
