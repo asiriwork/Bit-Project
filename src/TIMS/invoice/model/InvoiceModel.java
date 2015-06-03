@@ -4,9 +4,12 @@
  */
 package TIMS.invoice.model;
 
+import TIMS.app.lib.hbm.TimsBarnd;
 import TIMS.app.lib.hbm.TimsInvoice;
+import TIMS.brand.dto.BrandComboItem;
 import TIMS.invoice.dao.InvoiceDao;
 import TIMS.invoice.dto.InvoiceComboItem;
+import TIMS.invoice.dto.InvoiceNoComboItem;
 import TIMS.invoice.dto.InvoiceTypeComboItem;
 import TIMS.invoice.dto.SalesTypeComboItem;
 import java.util.HashSet;
@@ -90,6 +93,7 @@ public class InvoiceModel {
     public List getInvoiceList() {
         return this.getInvoiceDao().getInvoiceList();
     }
+   
     
     public InvoiceComboItem[] getInvoiceListComboItem(boolean withSelect) {
         List invoiceList = this.getInvoiceList();
@@ -108,6 +112,17 @@ public class InvoiceModel {
             invoiceComboItem[i] = new InvoiceComboItem((TimsInvoice) invoice);
         }
         
+        return invoiceComboItem;
+    }
+    
+
+    public InvoiceNoComboItem[] getInvoiceNoListComboItem() {
+         List invoiceNoList = this.getInvoiceList();
+        InvoiceNoComboItem invoiceComboItem[] = new InvoiceNoComboItem[invoiceNoList.size()];
+        int i = 0;
+        for (Object object : invoiceNoList) {
+            invoiceComboItem[i++] = new InvoiceNoComboItem((TimsInvoice) object);
+        }
         return invoiceComboItem;
     }
 }
