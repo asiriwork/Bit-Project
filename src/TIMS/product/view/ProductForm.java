@@ -8,12 +8,49 @@ package TIMS.product.view;
 
 import TIMS.product.controller.SaveProductController;
 import TIMS.product.dto.ProductDto;
+import javax.swing.JComboBox;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Sithara Gunawardana
  */
 public class ProductForm extends javax.swing.JPanel {
+
+    
+    
+    public String getPro_Description() {
+        return this.Pro_Description.getText();
+    }
+
+    public void setPro_Description(String Pro_Description) {
+        this.Pro_Description.setText(Pro_Description);
+    }
+
+    public String getPro_Name() {
+        return this.Pro_Name.getText();
+    }
+
+    public void setPro_Name(String Pro_Name) {
+        this.Pro_Name.setText(Pro_Name);
+    }
+
+    public String getPro_Size() {
+        return this.Pro_Size.getText();
+    }
+
+    public void setPro_Size(String Pro_Size) {
+        this.Pro_Size.setText(Pro_Size);
+    }
+
+    public String getProduct_types() {
+        return this.product_types.getSelectedItem().toString();
+    }
+
+    public void setProduct_types(String product_types) {
+        this.product_types.setSelectedItem(product_types);
+    }
 
     /**
      * Creates new form ProductForm
@@ -80,8 +117,18 @@ public class ProductForm extends javax.swing.JPanel {
         jLabel6.setText("Product Name");
 
         jButton1.setText("Save");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveproduct(evt);
+            }
+        });
 
-        jButton2.setText("Cencel");
+        jButton2.setText("view");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout checkedboxpannelLayout = new javax.swing.GroupLayout(checkedboxpannel);
         checkedboxpannel.setLayout(checkedboxpannelLayout);
@@ -213,28 +260,41 @@ public class ProductForm extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+private void saveproduct(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveproduct
 
     try{
         ProductDto productDto = new ProductDto();
         
-        
+        productDto.setName(Pro_Name.getText());
         productDto.setDescription(Pro_Description.getText());
-        productDto.setProductTypeCode(product_types.getSelectedItem().toString());
+       // productDto.setProductTypeCode(product_types.getSelectedItem().toString());
+        productDto.setProductTypeCode("10");
         productDto.setSize(Pro_Size.getText());
         
         
         SaveProductController controller = new SaveProductController();
         controller.saveProduct(productDto);
     }catch(Exception e){
-        System.out.println("error----->"+e);
+        System.out.println("error 1----->"+e);
     }
     
-}//GEN-LAST:event_SaveActionPerformed
+}//GEN-LAST:event_saveproduct
 
     private void product_typesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_product_typesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_product_typesActionPerformed
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Pro_Description.setText(null);
+        Pro_Name.setText(null);
+        Pro_Size.setText(null);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

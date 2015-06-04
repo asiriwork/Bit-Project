@@ -17,7 +17,7 @@ import javax.swing.table.TableModel;
 
 /**
  *
- * @author Nuwan Chathuranga <icechathuranga@gmail.com>
+ * @author Sithara Gunawaradana
  */
 public class ViewCustomerController extends BaseController {
 

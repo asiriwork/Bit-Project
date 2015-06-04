@@ -5,6 +5,7 @@
 package TIMS.product.controller;
 
 import TIMS.app.core.controller.BaseController;
+import TIMS.product.dto.ProductDto;
 import TIMS.product.view.ProductForm;
 import java.awt.event.ActionEvent;
 import javax.swing.BoxLayout;
@@ -14,12 +15,34 @@ import javax.swing.BoxLayout;
  * @author Damith
  */
 public class AddProductController extends BaseController{
+    
+    ProductForm form = null;
+
+    public ProductForm getForm() {
+        if (this.form == null) {
+            this.form = new ProductForm();
+        }
+        return form;
+    }
+
+    public void setForm(ProductForm form) {
+        this.form = form;
+    }
 
     public AddProductController(){
         
     }
     public AddProductController(ActionEvent e){
         super(e);
+    }
+     public AddProductController(ProductDto productDto) {
+
+        System.out.println("productDto------->" + productDto.getCode());
+        this.getForm().setProduct_types(productDto.getProductTypeCode().toString());
+        this.getForm().setPro_Size(productDto.getSize());
+        this.getForm().setPro_Name(productDto.getName());
+        this.getForm().setPro_Description(productDto.getDescription());
+        
     }
     
     @Override
