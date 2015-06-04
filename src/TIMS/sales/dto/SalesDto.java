@@ -132,4 +132,4 @@ public class SalesDto {
             this.rate = 0.0f;
         }
     }
-}
+    }

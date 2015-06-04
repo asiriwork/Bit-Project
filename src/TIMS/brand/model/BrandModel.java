@@ -6,6 +6,7 @@ package TIMS.brand.model;
 
 import TIMS.app.lib.hbm.TimsBarnd;
 import TIMS.brand.dao.BrandDao;
+import TIMS.brand.dto.BrandComboItem;
 import TIMS.brand.dto.BrandDto;
 import java.util.ArrayList;
 import java.util.List;
@@ -126,4 +127,20 @@ public class BrandModel {
         }
         return count;
     }
+    
+    
+    public List getAllBrandsList() {
+        return this.getBrandDao().getAllBrands();
+    }
+
+    public BrandComboItem[] getCustomerComboItem() {
+        List brandList = this.getAllBrandsList();
+        BrandComboItem brandComboItem[] = new BrandComboItem[brandList.size()];
+        int i = 0;
+        for (Object object : brandList) {
+            brandComboItem[i++] = new BrandComboItem((TimsBarnd) object);
+        }
+        return brandComboItem;
+    }
 }
+

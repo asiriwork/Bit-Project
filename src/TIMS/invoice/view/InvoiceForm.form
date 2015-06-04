@@ -131,7 +131,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="174" max="32767" attributes="0"/>
+                      <EmptySpace pref="177" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -179,7 +179,7 @@
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="82" max="32767" attributes="0"/>
                   </Group>
@@ -335,7 +335,7 @@
                               <Component id="Reset" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="addItemsBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="24" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -365,6 +365,9 @@
                       <Dimension value="[48, 30]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResetActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="addItemsBtn">
                   <Properties>
@@ -395,6 +398,9 @@
                   <StringArray count="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salesTypeActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

@@ -30,7 +30,7 @@ public class CustomerModel {
     public void setCustomerDao(CustomerDao customerDao) {
         this.customerDao = customerDao;
     }
-
+// save customer
     public TimsCustomer saveCustomer(CustomerDto customerDto) {
 
         TimsCustomer customer = null;
@@ -62,11 +62,11 @@ public class CustomerModel {
         System.out.println("newCustomer---code-->" + newCustomer.getCode());
         return newCustomer;
     }
-
+// select customer from code
     private TimsCustomer getCustomerByCode(Integer code) {
         return this.getCustomerDao().getCustomerByCode(code);
     }
-
+// load customer for view
     public DefaultTableModel loadCustomersData() {
         List data = this.getCustomerDao().getAllCustomers();
         Object columnNames[] = {"Select", "Code", "Name", "Othrer Name", "Email", "Telephone", "Mobile", "Type", "Fax", "Street", "City", "PoBox", "Others"};
@@ -112,8 +112,7 @@ public class CustomerModel {
             customers.getEmail(), customers.getTelephone(), customers.getMobileNo(), customers.getType(),
             customers.getFax(), customers.getStreet(), customers.getCity(), customers.getPobox(), customers.getOther()};
         return o;
-    }
-
+    }// delete the customer
     public int deleteCustomers(ArrayList<Integer> customerIds) {
         int count = 0;
         for (Integer customersid : customerIds) {
@@ -122,7 +121,7 @@ public class CustomerModel {
         }
         return count;
     }
-
+  //for dropdown cox
     public List getAllCustomersList() {
         return this.getCustomerDao().getAllCustomers();
     }

@@ -5,6 +5,7 @@
 package TIMS.sales.controller;
 
 import TIMS.app.core.controller.BaseController;
+import TIMS.sales.dto.SalesDto;
 import TIMS.sales.view.SalesForm;
 import java.awt.event.ActionEvent;
 import javax.swing.BoxLayout;
@@ -15,12 +16,30 @@ import javax.swing.BoxLayout;
  */
 public class AddSalesController extends BaseController{
 
+     SalesForm form = null;
+
+    public SalesForm getForm() {
+        if (this.form == null) {
+            this.form = new SalesForm();
+        }
+        return form;
+    }
+
+    public void setForm(SalesForm form) {
+        this.form = form;
+    }
     public AddSalesController(){
         
     }
     public AddSalesController(ActionEvent e){
         super(e);
     }
+    public AddSalesController(SalesDto salesDto) {
+
+        System.out.println("salesDto------->" + salesDto.getCode());
+    }
+
+    
     
     @Override
     public void execute() {

@@ -6,6 +6,11 @@
 
 package TIMS.purches.view;
 
+import TIMS.brand.dto.BrandComboItem;
+import TIMS.brand.model.BrandModel;
+import TIMS.invoice.dto.InvoiceNoComboItem;
+import TIMS.invoice.model.InvoiceModel;
+
 /**
  *
  * @author hp
@@ -15,8 +20,12 @@ public class PurchaseForm extends javax.swing.JPanel {
     /**
      * Creates new form PurchaseFrom
      */
+     protected InvoiceModel invoiceModel;
+    protected BrandModel brandModel;
     public PurchaseForm() {
         initComponents();
+         this.setInvoiceList(this.getInvoiceModel().getInvoiceNoListComboItem());
+        this.setBrandList(this.getBrandModel().getCustomerComboItem());
     }
 
     /**
@@ -89,17 +98,17 @@ public class PurchaseForm extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Invoice No.");
 
-        Pur_InvoiceNo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Pur_InvoiceNo.setToolTipText("");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText("Product Code");
 
-        Pur_ProductCode.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Pur_ProductCode.setToolTipText("");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setText("Brand Code");
 
-        Pur_BrandCode.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Pur_BrandCode.setToolTipText("");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -214,6 +223,11 @@ public class PurchaseForm extends javax.swing.JPanel {
 
         Reset.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Reset.setText("Reset");
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -286,6 +300,15 @@ public class PurchaseForm extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveActionPerformed
 
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+                Pur_Discount.setText(null);
+                Pur_Quantity.setText(null);
+                Pur_Rate.setText(null);
+                Pur_Status.setText(null);
+                Pur_Tax.setText(null);
+                
+    }//GEN-LAST:event_ResetActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox Pur_BrandCode;
@@ -312,4 +335,30 @@ public class PurchaseForm extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
+
+     private void setInvoiceList(InvoiceNoComboItem[] invoiceListComboItem) {
+        for (InvoiceNoComboItem invoiceComboItem : invoiceListComboItem) {
+            this.Pur_InvoiceNo.addItem(invoiceComboItem);
+        }
+  }
+  private void setBrandList(BrandComboItem[] brandListComboItem) {
+        for (BrandComboItem brandComboItem : brandListComboItem) {
+            this.Pur_BrandCode.addItem(brandComboItem);
+        }
+  }
+private InvoiceModel getInvoiceModel() {
+        if (invoiceModel == null) {
+            invoiceModel = new InvoiceModel();
+        }
+        return invoiceModel;
+    }
+    
+    private BrandModel getBrandModel() {
+        
+        if (brandModel == null) {
+            brandModel = new BrandModel();
+        }
+        return brandModel;
+    }
+
 }
