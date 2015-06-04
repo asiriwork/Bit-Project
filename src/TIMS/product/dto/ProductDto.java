@@ -13,7 +13,16 @@ public class ProductDto {
     private Integer code;
     private String description;
     private String size;
+    private String name;
     private Integer productTypeCode;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Integer getCode() {
         return code;

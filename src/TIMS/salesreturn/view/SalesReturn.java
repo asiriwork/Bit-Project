@@ -138,6 +138,11 @@ private void setReferenceInvoice(InvoiceComboItem[] invoiceListComboItem) {
         Product_Code.setToolTipText("");
 
         Invoice_No.setToolTipText("");
+        Invoice_No.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Invoice_NoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -284,6 +289,10 @@ private void setReferenceInvoice(InvoiceComboItem[] invoiceListComboItem) {
         SalesReturn_Other.setText(null);
         
     }//GEN-LAST:event_ResetActionPerformed
+
+    private void Invoice_NoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Invoice_NoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Invoice_NoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
