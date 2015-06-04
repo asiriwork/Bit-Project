@@ -5,6 +5,7 @@
 package TIMS.sales.controller;
 
 import TIMS.app.core.controller.BaseController;
+import TIMS.app.lib.hbm.TimsSale;
 import TIMS.sales.dto.SalesDto;
 import TIMS.sales.model.SalesModel;
 
@@ -28,7 +29,20 @@ public class SaveSalesController extends BaseController {
     }
 
     public void saveSales(SalesDto salesDto) {
-        this.getSalesModel().saveSales(salesDto);
+        TimsSale saveSale = this.getSalesModel().saveSales(salesDto);
+        SalesDto dto = new SalesDto();
+        
+        dto.setCode(saveSale.getCode());
+        dto.setRate(saveSale.getRate());
+        dto.setDiscount(saveSale.getDiscount());
+        dto.setQuantity(saveSale.getQty());
+        dto.setInvoiceNo(saveSale.getTimsInvoice());
+        dto.setProductCode(saveSale.getTimsProduct());
+        dto.setBrandCode(saveSale.getTimsBarnd());
+        
+        AddSalesController addSalesController = new AddSalesController(dto);
+        addSalesController.execute();
+        
     }
 
     @Override

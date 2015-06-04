@@ -10,18 +10,18 @@ import TIMS.app.lib.hbm.TimsInvoice;
  *
  * @author Sithara Gunawardana
  */
-public class InvoiceComboItem {
+public class InvoiceNoComboItem {
     private Integer no;
     private String name;
     private TimsInvoice invoice;
 
-    public InvoiceComboItem(TimsInvoice invoice) {
+    public InvoiceNoComboItem(TimsInvoice invoice) {
         this.invoice = invoice;
         this.no = invoice.getNo();
         this.name = this.generateName();
     }
 
-    public InvoiceComboItem() {
+    public InvoiceNoComboItem() {
         
     }
 
@@ -51,11 +51,11 @@ public class InvoiceComboItem {
     }
     
     public String generateName(){
-        return getInvoice().getNo().toString()+" - "+getInvoice().getDate();
+        return getInvoice().getNo().toString();
     }
     
     @Override
     public String toString(){
-        return this.getName();
+        return this.getNo().toString();
     }
 }

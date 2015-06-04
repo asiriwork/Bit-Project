@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  *
- * @author Damith
+ * @author Sithara Gunawardana
  */
 public class ProductModel {
 

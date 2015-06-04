@@ -6,20 +6,31 @@
 
 package TIMS.sales.view;
 
+import TIMS.brand.dto.BrandComboItem;
+import TIMS.brand.model.BrandModel;
+import TIMS.invoice.dto.InvoiceComboItem;
+import TIMS.invoice.dto.InvoiceNoComboItem;
+import TIMS.invoice.dto.InvoiceTypeComboItem;
+import TIMS.invoice.model.InvoiceModel;
 import TIMS.sales.controller.SaveSalesController;
 import TIMS.sales.dto.SalesDto;
 
 /**
  *
- * @author hp
+ * @author Sithara Gunawardana
  */
 public class SalesForm extends javax.swing.JPanel {
 
     /**
      * Creates new form SalesForm
      */
+    
+    protected InvoiceModel invoiceModel;
+    protected BrandModel brandModel;
     public SalesForm() {
         initComponents();
+        this.setInvoiceList(this.getInvoiceModel().getInvoiceNoListComboItem());
+        this.setBrandList(this.getBrandModel().getCustomerComboItem());
     }
 
     /**
@@ -53,7 +64,7 @@ public class SalesForm extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(640, 512));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Sales");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -73,29 +84,25 @@ public class SalesForm extends javax.swing.JPanel {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Rate");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Quantity");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Invoice No.");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Product Code");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Discount");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Brand Code");
 
-        Sales_InvoiceNo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        Sales_ProdcutCode.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        Sales_BrandCode.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Sales_BrandCode.setToolTipText("");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -151,7 +158,7 @@ public class SalesForm extends javax.swing.JPanel {
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
-        Save.setFont(new java.awt.Font("Tahoma", 0, 12));
+        Save.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Save.setText("Save");
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,8 +166,13 @@ public class SalesForm extends javax.swing.JPanel {
             }
         });
 
-        Reset.setFont(new java.awt.Font("Tahoma", 0, 12));
+        Reset.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Reset.setText("Reset");
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -204,7 +216,7 @@ public class SalesForm extends javax.swing.JPanel {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -233,7 +245,8 @@ private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:ev
         salesDto.setRate(Sales_Rate.getText());
         salesDto.setQuantity(Sales_Qty.getText());
         salesDto.setInvoiceNo(Sales_InvoiceNo.getSelectedItem().toString());
-        salesDto.setProductCode(Sales_ProdcutCode.getSelectedItem().toString());
+       // salesDto.setProductCode(Sales_ProdcutCode.getSelectedItem().toString());
+        salesDto.setProductCode("SS");
         salesDto.setDiscount(Sales_Discount.getText());
         salesDto.setBrandCode(Sales_BrandCode.getSelectedItem().toString());       
         
@@ -245,7 +258,23 @@ private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:ev
     
 }//GEN-LAST:event_SaveActionPerformed
 
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+        // TODO add your handling code here:
+        Sales_Discount.setText(null);;
+        Sales_Qty.setText(null);;
+        Sales_Rate.setText(null);;
+    }//GEN-LAST:event_ResetActionPerformed
 
+  private void setInvoiceList(InvoiceNoComboItem[] invoiceListComboItem) {
+        for (InvoiceNoComboItem invoiceComboItem : invoiceListComboItem) {
+            this.Sales_InvoiceNo.addItem(invoiceComboItem);
+        }
+  }
+  private void setBrandList(BrandComboItem[] brandListComboItem) {
+        for (BrandComboItem brandComboItem : brandListComboItem) {
+            this.Sales_BrandCode.addItem(brandComboItem);
+        }
+  }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Reset;
     private javax.swing.JComboBox Sales_BrandCode;
@@ -267,4 +296,19 @@ private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:ev
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
+
+    private InvoiceModel getInvoiceModel() {
+        if (invoiceModel == null) {
+            invoiceModel = new InvoiceModel();
+        }
+        return invoiceModel;
+    }
+    
+    private BrandModel getBrandModel() {
+        
+        if (brandModel == null) {
+            brandModel = new BrandModel();
+        }
+        return brandModel;
+    }
 }
