@@ -10,17 +10,17 @@ public class TimsSale  implements java.io.Serializable {
 
 
      private Integer code;
-     private TimsInvoice timsInvoice;
-     private TimsProduct timsProduct;
-     private TimsBarnd timsBarnd;
+     private Integer timsInvoice;
+     private Integer timsProduct;
+     private Integer timsBarnd;
      private Float rate;
      private Integer qty;
-     private Long discount;
+     private Double discount;
 
     public TimsSale() {
     }
 
-    public TimsSale(TimsInvoice timsInvoice, TimsProduct timsProduct, TimsBarnd timsBarnd, Float rate, Integer qty, Long discount) {
+    public TimsSale(Integer timsInvoice, Integer timsProduct, Integer timsBarnd, Float rate, Integer qty, Double discount) {
        this.timsInvoice = timsInvoice;
        this.timsProduct = timsProduct;
        this.timsBarnd = timsBarnd;
@@ -36,25 +36,25 @@ public class TimsSale  implements java.io.Serializable {
     public void setCode(Integer code) {
         this.code = code;
     }
-    public TimsInvoice getTimsInvoice() {
+    public Integer getTimsInvoice() {
         return this.timsInvoice;
     }
     
-    public void setTimsInvoice(TimsInvoice timsInvoice) {
+    public void setTimsInvoice(Integer timsInvoice) {
         this.timsInvoice = timsInvoice;
     }
-    public TimsProduct getTimsProduct() {
+    public Integer getTimsProduct() {
         return this.timsProduct;
     }
     
-    public void setTimsProduct(TimsProduct timsProduct) {
+    public void setTimsProduct(Integer timsProduct) {
         this.timsProduct = timsProduct;
     }
-    public TimsBarnd getTimsBarnd() {
+    public Integer getTimsBarnd() {
         return this.timsBarnd;
     }
     
-    public void setTimsBarnd(TimsBarnd timsBarnd) {
+    public void setTimsBarnd(Integer timsBarnd) {
         this.timsBarnd = timsBarnd;
     }
     public Float getRate() {
@@ -71,11 +71,11 @@ public class TimsSale  implements java.io.Serializable {
     public void setQty(Integer qty) {
         this.qty = qty;
     }
-    public Long getDiscount() {
+    public Double getDiscount() {
         return this.discount;
     }
     
-    public void setDiscount(Long discount) {
+    public void setDiscount(Double discount) {
         this.discount = discount;
     }
 

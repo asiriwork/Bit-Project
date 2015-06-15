@@ -6,17 +6,33 @@
 
 package TIMS.stockreturn.view;
 
+import TIMS.brand.dto.BrandComboItem;
+import TIMS.brand.model.BrandModel;
+import TIMS.invoice.dto.InvoiceComboItem;
+import TIMS.invoice.dto.InvoiceNoComboItem;
+import TIMS.invoice.model.InvoiceModel;
+
 /**
  *
- * @author hp
+ * @author Sithara Gunawardana
  */
 public class StockReturnForm extends javax.swing.JPanel {
 
     /**
      * Creates new form StockReturnForm
      */
+    protected InvoiceModel invoiceModel;
+    protected BrandModel brandModel;
     public StockReturnForm() {
         initComponents();
+        this.setInvoiceList(this.getInvoiceModel().getInvoiceNoListComboItem());
+        this.setBrandList(this.getBrandModel().getCustomerComboItem());
+       this.setReferenceInvoice(this.getInvoiceModel().getInvoiceListComboItem(true));
+    }
+    private void setReferenceInvoice(InvoiceComboItem[] invoiceListComboItem) {
+        for (InvoiceComboItem invoiceComboItem : invoiceListComboItem) {
+            Ref_Invoice_No.addItem(invoiceComboItem);
+        }
     }
 
     /**
@@ -108,7 +124,7 @@ public class StockReturnForm extends javax.swing.JPanel {
 
         Stc_Return_Rate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        Stc_Return_Invoice_No.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Stc_Return_Invoice_No.setToolTipText("");
 
         Stc_Return_Type.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,11 +132,14 @@ public class StockReturnForm extends javax.swing.JPanel {
             }
         });
 
-        Product_Code.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Ref_Invoice_No.setToolTipText("");
 
-        Ref_Invoice_No.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        Brand_Code.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Brand_Code.setToolTipText("");
+        Brand_Code.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Brand_CodeActionPerformed(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel10.setText("Other");
@@ -132,6 +151,11 @@ public class StockReturnForm extends javax.swing.JPanel {
         Save.setText("Save");
 
         Reset.setText("Reset");
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -278,6 +302,18 @@ public class StockReturnForm extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_Stc_Return_TypeActionPerformed
 
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+        Stc_Return_Other.setText(null);
+        Stc_Return_Qty.setText(null);
+        Stc_Return_Rate.setText(null);
+        Stc_Return_Reason.setText(null);
+        Stc_Return_Type.setText(null);
+    }//GEN-LAST:event_ResetActionPerformed
+
+    private void Brand_CodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brand_CodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Brand_CodeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox Brand_Code;
@@ -308,4 +344,30 @@ public class StockReturnForm extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+
+
+     private void setInvoiceList(InvoiceNoComboItem[] invoiceListComboItem) {
+        for (InvoiceNoComboItem invoiceComboItem : invoiceListComboItem) {
+            this.Stc_Return_Invoice_No.addItem(invoiceComboItem);
+        }
+  }
+  private void setBrandList(BrandComboItem[] brandListComboItem) {
+        for (BrandComboItem brandComboItem : brandListComboItem) {
+            this.Brand_Code.addItem(brandComboItem);
+        }
+  }
+private InvoiceModel getInvoiceModel() {
+        if (invoiceModel == null) {
+            invoiceModel = new InvoiceModel();
+        }
+        return invoiceModel;
+    }
+    
+    private BrandModel getBrandModel() {
+        
+        if (brandModel == null) {
+            brandModel = new BrandModel();
+        }
+        return brandModel;
+    }
 }

@@ -6,7 +6,7 @@ package TIMS.invoice.dto;
 
 /**
  *
- * @author Nuwan Chathuranga <icechathuranga@gmail.com>
+ * @author Sithara Gunawardana
  */
 public class InvoiceTypeComboItem {
 

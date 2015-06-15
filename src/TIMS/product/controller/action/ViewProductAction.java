@@ -17,10 +17,13 @@ public class ViewProductAction extends BaseAction{
 
     @Override
     public void execute(ActionEvent e) {
-        JOptionPane.showMessageDialog(null, "view product action");
-        ViewProductController vpc = new ViewProductController();
-        
-        
+        try {
+            ViewProductController viewProductController = new ViewProductController();
+            viewProductController.execute();
+        } catch (Exception ex) {
+            System.out.print("Error----->" + ex);
+        }
     }
     
 }
+

@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  *
- * @author Damith
+ * @author Sithara Gunawardana
  */
 public class ProductModel {
 
@@ -36,7 +36,7 @@ public class ProductModel {
     public TimsProduct saveProduct(ProductDto productDto) {
 
         TimsProduct timsProduct = new TimsProduct();
-
+        timsProduct.setName(productDto.getName());
         timsProduct.setCode(productDto.getCode());
         timsProduct.setDescription(productDto.getDescription());
         timsProduct.setSize(productDto.getSize());

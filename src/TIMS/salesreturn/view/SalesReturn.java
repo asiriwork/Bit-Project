@@ -6,6 +6,12 @@
 
 package TIMS.salesreturn.view;
 
+import TIMS.brand.dto.BrandComboItem;
+import TIMS.brand.model.BrandModel;
+import TIMS.invoice.dto.InvoiceComboItem;
+import TIMS.invoice.dto.InvoiceNoComboItem;
+import TIMS.invoice.model.InvoiceModel;
+
 /**
  *
  * @author hp
@@ -15,10 +21,21 @@ public class SalesReturn extends javax.swing.JPanel {
     /**
      * Creates new form SalesReturn
      */
+    protected InvoiceModel invoiceModel;
+    protected BrandModel brandModel;
     public SalesReturn() {
         initComponents();
+          this.setInvoiceList(this.getInvoiceModel().getInvoiceNoListComboItem());
+        this.setBrandList(this.getBrandModel().getCustomerComboItem());
+       this.setReferenceInvoice(this.getInvoiceModel().getInvoiceListComboItem(true));
+         
+      
     }
-
+private void setReferenceInvoice(InvoiceComboItem[] invoiceListComboItem) {
+        for (InvoiceComboItem invoiceComboItem : invoiceListComboItem) {
+            Ref_Invoice_No.addItem(invoiceComboItem);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -109,13 +126,23 @@ public class SalesReturn extends javax.swing.JPanel {
         SalesReturn_Other.setRows(5);
         jScrollPane2.setViewportView(SalesReturn_Other);
 
-        Brand_Code.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Brand_Code.setToolTipText("");
+        Brand_Code.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Brand_CodeActionPerformed(evt);
+            }
+        });
 
-        Ref_Invoice_No.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Ref_Invoice_No.setToolTipText("");
 
-        Product_Code.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Product_Code.setToolTipText("");
 
-        Invoice_No.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Invoice_No.setToolTipText("");
+        Invoice_No.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Invoice_NoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -146,13 +173,13 @@ public class SalesReturn extends javax.swing.JPanel {
                             .addComponent(jLabel7)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
-                        .addGap(78, 78, 78)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Brand_Code, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Ref_Invoice_No, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Invoice_No, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Product_Code, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Invoice_No, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(144, Short.MAX_VALUE))
+                            .addComponent(Ref_Invoice_No, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Brand_Code, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,6 +222,11 @@ public class SalesReturn extends javax.swing.JPanel {
         Save.setText("Save");
 
         Reset.setText("Reset");
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -238,13 +270,29 @@ public class SalesReturn extends javax.swing.JPanel {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void QtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QtyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_QtyActionPerformed
+
+    private void Brand_CodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brand_CodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Brand_CodeActionPerformed
+
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+        Qty.setText(null);
+        Sales_Return_Rate.setText(null);
+        SalesReturn_Rsn.setText(null);
+        SalesReturn_Other.setText(null);
+        
+    }//GEN-LAST:event_ResetActionPerformed
+
+    private void Invoice_NoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Invoice_NoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Invoice_NoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -273,4 +321,29 @@ public class SalesReturn extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+
+     private void setInvoiceList(InvoiceNoComboItem[] invoiceListComboItem) {
+        for (InvoiceNoComboItem invoiceComboItem : invoiceListComboItem) {
+            this.Invoice_No.addItem(invoiceComboItem);
+        }
+  }
+  private void setBrandList(BrandComboItem[] brandListComboItem) {
+        for (BrandComboItem brandComboItem : brandListComboItem) {
+            this.Brand_Code.addItem(brandComboItem);
+        }
+  }
+private InvoiceModel getInvoiceModel() {
+        if (invoiceModel == null) {
+            invoiceModel = new InvoiceModel();
+        }
+        return invoiceModel;
+    }
+    
+    private BrandModel getBrandModel() {
+        
+        if (brandModel == null) {
+            brandModel = new BrandModel();
+        }
+        return brandModel;
+    }
 }

@@ -180,6 +180,11 @@ public class InvoiceForm extends javax.swing.JPanel implements ActionListener {
         Reset.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Reset.setText("Reset");
         Reset.setPreferredSize(new java.awt.Dimension(48, 30));
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
 
         addItemsBtn.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
         addItemsBtn.setText("Add Items");
@@ -211,8 +216,14 @@ public class InvoiceForm extends javax.swing.JPanel implements ActionListener {
                     .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addItemsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
+
+        salesType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salesTypeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -256,7 +267,7 @@ public class InvoiceForm extends javax.swing.JPanel implements ActionListener {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addComponent(salesType, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
@@ -294,7 +305,7 @@ public class InvoiceForm extends javax.swing.JPanel implements ActionListener {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(82, Short.MAX_VALUE))
         );
@@ -358,6 +369,16 @@ public class InvoiceForm extends javax.swing.JPanel implements ActionListener {
     private void Vehicle_NoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vehicle_NoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Vehicle_NoActionPerformed
+
+    private void salesTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salesTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salesTypeActionPerformed
+
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+         Invoice_Date.setText(null);;
+        Vehicle_No.setText(null);;
+        jTextArea1.setText(null);;
+    }//GEN-LAST:event_ResetActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Invoice_Date;

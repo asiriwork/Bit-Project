@@ -10,7 +10,7 @@ import java.util.Set;
 public class TimsProduct implements java.io.Serializable {
 
     private Integer code;
-    private TimsProductType timsProductType;
+    private String timsProductType;
     private String size;
     private String name;
     private String description;
@@ -24,7 +24,7 @@ public class TimsProduct implements java.io.Serializable {
     public TimsProduct() {
     }
 
-    public TimsProduct(TimsProductType timsProductType, String size, String description, Set timsSaleReturns, Set timsProductBrands, Set timsPurcheses, Set timsProductGroups, Set timsSales, Set timsStockReturns) {
+    public TimsProduct(String timsProductType, String size, String description, Set timsSaleReturns, Set timsProductBrands, Set timsPurcheses, Set timsProductGroups, Set timsSales, Set timsStockReturns) {
         this.timsProductType = timsProductType;
         this.size = size;
         this.description = description;
@@ -44,11 +44,11 @@ public class TimsProduct implements java.io.Serializable {
         this.code = code;
     }
 
-    public TimsProductType getTimsProductType() {
+    public String getTimsProductType() {
         return this.timsProductType;
     }
 
-    public void setTimsProductType(TimsProductType timsProductType) {
+    public void setTimsProductType(String timsProductType) {
         this.timsProductType = timsProductType;
     }
 
