@@ -5,6 +5,7 @@
 package TIMS.product.controller.action;
 
 import TIMS.app.core.controller.action.BaseAction;
+import TIMS.product.controller.ViewProductController;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 
@@ -17,6 +18,9 @@ public class ViewProductAction extends BaseAction{
     @Override
     public void execute(ActionEvent e) {
         JOptionPane.showMessageDialog(null, "view product action");
+        ViewProductController vpc = new ViewProductController();
+        
+        
     }
     
 }

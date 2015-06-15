@@ -76,7 +76,7 @@ public class LoginController extends BaseController {
 
     @Override
     public void execute() {
-        if (!this.getConfig().isSecured()) {
+        if (this.getConfig().isSecured()) {
             this.getUserManager().setUser(new User(new TimsUser()));
             WelcomeController.getInstance().execute();
         } else {
